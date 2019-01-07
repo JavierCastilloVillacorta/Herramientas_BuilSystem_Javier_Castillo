@@ -1,0 +1,30 @@
+<div class="border">
+  <div class="container">
+    <img src="../../assets/{{product.imagen}}" alt="imagen" height="150px" width="100%">
+  </div>
+  <br>
+  <div class="container">
+    <h5>{{product.nombre}}</h5>
+    <h6>Precio: {{product.precio}}</h6>
+    <h6><strong>Unidades disponibles: {{product.cantidad}}  {{product.id}}</strong></h6>
+    <div class="row">
+      <div class="col-5">
+        <a routerLink="/catalogo/{{product.id}}">
+          <button type="button" class="btn btn-primary letra-btn">Ver mas</button>
+        </a>
+      </div>
+      <div class="col-7">
+        <div class="row">
+          <div class="col-5">
+            <button type="button" class="btn btn-warning letra-btn">Añadir</button>
+          </div>
+          <div class="col-7">
+            <input type="number" class="text-left letra-btn inp-width" name="" value="1">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+<br>

@@ -1,15 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { UsuIterfase } from '../model/usuIterfase';
+import { LoginService }  from '../login.service';
+import { NgForm } from '@angular/forms/src/directives/ng_form'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit{
 
-  constructor() { }
+  user: UsuIterfase = {
+    email: "",
+    password: ""
+  };
 
-  ngOnInit() {
+
+  constructor(private loginService: LoginService){}
+
+  ngOnInit(){
+    /*
+    this.loginService.getUsuario().subscribe(usuario =>{
+      console.log(usuario);
+    })
+    */
   }
+
+  loginForm(form: NgForm){
+    //alert("email: "+this.user.email);
+    this.loginService.loginForm(this.user);
+
+
+  }
+
 
 }
