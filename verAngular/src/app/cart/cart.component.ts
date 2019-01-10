@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from '../shopping-cart.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private shoppingCartService: ShoppingCartService
+  ) { }
 
   ngOnInit() {
+    if(localStorage.getItem("email") == null){
+      this.router.navigate(['/login']);
+    }
+  }
+
+  pago(){
+    this.shoppingCartService.pagoCarrito();
   }
 
 }

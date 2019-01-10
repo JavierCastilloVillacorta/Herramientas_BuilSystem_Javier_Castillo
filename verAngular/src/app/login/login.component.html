@@ -7,10 +7,12 @@
           <div class="form-group">
             <label for="Correo">Correo Electronico</label>
             <input type="email" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required>
+            <label *ngIf="!validEmail" class="error">Campo Obligatorio</label>
           </div>
           <div class="form-group">
             <label for="password">Contraseña</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+            <label *ngIf="!validPassword" class="error">Campo Obligatorio</label>
           </div>
           <div class="text-center">
             <button type="submit" class="btn bg-success text-white">Ingresar</button>

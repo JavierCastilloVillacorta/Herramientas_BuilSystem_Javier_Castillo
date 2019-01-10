@@ -7,8 +7,13 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule} from 'angularfire2';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 import { LoginService }  from './login.service';
 import { ProductService } from './product.service';
+import { ShoppingCartService } from './shopping-cart.service';
 
 
 import { HeaderComponent } from './header/header.component';
@@ -38,7 +43,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AngularFirestoreModule,
     FormsModule
   ],
-  providers: [LoginService,ProductService],
+  providers: [
+    LoginService,
+    ProductService,
+    ShoppingCartService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

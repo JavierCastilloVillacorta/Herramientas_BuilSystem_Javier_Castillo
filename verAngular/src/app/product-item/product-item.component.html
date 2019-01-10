@@ -6,7 +6,7 @@
   <div class="container">
     <h5>{{product.nombre}}</h5>
     <h6>Precio: {{product.precio}}</h6>
-    <h6><strong>Unidades disponibles: {{product.cantidad}}  {{product.id}}</strong></h6>
+    <h6><strong>Unidades disponibles: {{product.cantidad}}</strong></h6>
     <div class="row">
       <div class="col-5">
         <a routerLink="/catalogo/{{product.id}}">
@@ -16,10 +16,10 @@
       <div class="col-7">
         <div class="row">
           <div class="col-5">
-            <button type="button" class="btn btn-warning letra-btn">Añadir</button>
+            <button type="button" class="btn btn-warning letra-btn" (click)=addToCart() >Añadir</button>
           </div>
           <div class="col-7">
-            <input type="number" class="text-left letra-btn inp-width" name="" value="1">
+            <input type="number" class="text-left letra-btn inp-width" name=""  [(ngModel)]="cantidadItem">
           </div>
         </div>
       </div>
