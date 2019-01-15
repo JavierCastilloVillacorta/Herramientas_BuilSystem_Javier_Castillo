@@ -2,31 +2,27 @@ import React, { Component } from 'react';
 import './Dashboard.css';
 import Header from './Header.js';
 import ProductCatalog from './ProductCatalog.js';
-import { Route, Redirect } from 'react-router-dom'
-
-
+import { Redirect } from 'react-router'
 
 class Dashboard extends Component {
 
+
   constructor(){
     super();
-
+    this.state ={
+      isLoggedIn:true
+    };
     if(localStorage.getItem("email") == null){
-
-      <Redirect to="/login"/>
-
-    // validar regreso a login si no est logueado
+      this.state.isLoggedIn = false
     }
-
-
-
   }
 
 
-
-
-
   render(){
+
+    if(this.state.isLoggedIn === false){
+            return (<Redirect to="/" />);
+    }
 
     return(
       <div className="background">

@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import Header from './Header.js';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
+
+
 class ProductDetail extends Component {
 
   constructor(props){
     super(props)
+    this.state ={
+      isLoggedIn:true
+    };
+    if(localStorage.getItem("email") == null){
+      this.state.isLoggedIn = false
+    }
   }
 
   retornar = () =>{
@@ -13,9 +22,12 @@ class ProductDetail extends Component {
 
   render(){
 
+    if(this.state.isLoggedIn === false){
+        return (<Redirect to="/" />);
+    }
+
     const product = this.props.location.state.product
     var img = require('../img/'+product.imagen);
-
 
 
     return(

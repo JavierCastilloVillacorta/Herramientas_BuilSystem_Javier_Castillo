@@ -1,8 +1,8 @@
-export default class  ProductIterfase{
+export default class  CarIterfase{
   product;
   quantity;
   subtotal() {
-      return this.product.price * this.quantity;
+      return this.product.precio * this.quantity;
   }
   constructor(product, quantity) {
       this.product = product;

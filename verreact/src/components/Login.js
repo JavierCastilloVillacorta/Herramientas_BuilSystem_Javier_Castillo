@@ -33,8 +33,8 @@ class Login extends Component {
         if (usuario.data().email == this.state.email) {
           if (usuario.data().password == this.state.password) {
             const { history } = this.props;
+            localStorage.setItem("email", usuario.data().email);
             history.push('/dashboard');
-            //localStorage.setItem("email", usuario.data().email);
           }else{
             alert("Error Contraseña")
           }
