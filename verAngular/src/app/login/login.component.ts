@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit{
           localStorage.setItem("email", data[1]);
           this.router.navigate(['./dashboard']);
         }else{
-          alert(data[0] + "ssss");
+          alert(data[0]);
         }
 
       })
