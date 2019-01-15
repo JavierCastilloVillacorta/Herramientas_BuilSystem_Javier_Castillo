@@ -1,0 +1,9 @@
+Para Angular iniciar : ng serve -o
+Direccion: http://localhost:4200
+usuario : javier@gmail.com
+password: 123456
+
+para Reactjs iniciar : npm start
+direccion: http://localhost:3000
+usuario : javier@gmail.com
+password: 123456

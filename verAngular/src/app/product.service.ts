@@ -69,10 +69,5 @@ export class ProductService {
       mensaje[1] = "Producto: " +product.nombre + "  cantidad: "+ cantidad+ "\n";
       respuesta(mensaje)
     })
-
-
-
   }
-
-
 }

@@ -1,5 +1,3 @@
-import React  from 'react';
-import ReactDOM from 'react-dom';
 import CarIterfase from '../modelo/carIterfase.js';
 
 import db from '../firebase.js';
@@ -20,9 +18,9 @@ const dbProductos = db.collection('productos');
   }
 
   addProduct(product, cantidad){
-    const found = this.shoppingItemms.find(sci => sci.product.id == product.id )
+    const found = this.shoppingItemms.find(sci => sci.product.id === product.id )
     if(found != null){
-      if(cantidad == 0){
+      if(cantidad === 0){
           const index = this.shoppingItemms.indexOf(found, 0);
           this.shoppingItemms.splice(index,1);
       }else{

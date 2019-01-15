@@ -65,7 +65,7 @@ handleChange = (e) =>{
 
 
   render(){
-    var productsItem;
+    var productsItem
     if (this.state.dataSourceReady){
       productsItem = [];
       this.state.productsToDisplay.map((products, i) => {
